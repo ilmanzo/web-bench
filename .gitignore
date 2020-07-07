@@ -1,7 +1,59 @@
+# project specific
+# exclude all (first) and then negate exclude on all with an extension, and all folders
+*
+!*/
+!*.*
+!/BUILD
+!/CHANGELOG
+!/Dockerfile
+!/LICENSE
+!/Makefile
+!/NOTICE
+!/README
+# then add all other (folder and files) exclusions ...
+
+# temporary/work/output folders
+_old/
+# bin/
+build/
+dist/
+docs/
+out/
+private/
+temp/
+tmp/
+
+# mac files
+.DS_Store
+
+# environment variables file
+.env
+.envrc
+
+# IDE/editors
+.vscode
+.cache
+.metadata
+.settings
+
+# common files to not commit
+*~*
+*.bak
+Thumbs.db
+*.db
+*.zip
+*.tar
+*.tar.gz
+*.out
+*.lock
+*.tmp
+*.temp
+
+# executable and binary files files
+*.bin
+*.exe
+*.dll
+*.so
 *.o
-helloweb-nim
-helloweb-pas
-helloweb-v
-helloweb-go
-hello-web-crystal
-helloweb_pas
+# below exclude even all files without an extension ...
+
