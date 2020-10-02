@@ -9,7 +9,7 @@ import (
 
 const (
 	bind_address string = "0.0.0.0" // empty means all available interfaces, set '0.0.0.0' here just for explitic value
-	bind_port    string = "8000"
+	bind_port    string = "8080"
 	address      string = bind_address + ":" + bind_port
 )
 
