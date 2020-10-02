@@ -7,7 +7,7 @@ import vweb
 
 const (
 	// server = 'localhost'
-	port = 8000
+	port = 8080
 )
 
 struct App {
