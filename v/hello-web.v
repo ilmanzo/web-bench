@@ -7,12 +7,11 @@ import vweb
 
 const (
 	// server = 'localhost'
-	port = 8080
+	port = 8000
 )
 
 struct App {
-pub mut:
-    vweb vweb.Context
+    vweb.Context // using embedded struct
 }
 
 fn main() {
@@ -22,18 +21,17 @@ fn main() {
 
 // initialization of webapp
 pub fn (mut app App) init_once() {
-	// app.vweb.handle_static('.') // serve static content from current folder
-	// app.vweb.handle_static('public') // serve static content from folder './public'
+	// app.handle_static('.') // serve static content from current folder
+	// app.handle_static('public') // serve static content from folder './public'
 	// note that template files now can be in the same folder, or under 'templates/' ...
 }
 
-// initialization before any action
+// initialization just before any route call
 pub fn (mut app App) init() {
 }
 
 // serve some content on the root (index) route '/'
 // note that this implementation doesn't requires a template page ...
 pub fn (mut app App) index() vweb.Result {
-	return app.vweb.json('{"Hello":"World"}')
+	return app.json('{"Hello":"World"}')
 }
-
