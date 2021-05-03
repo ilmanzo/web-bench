@@ -19,18 +19,18 @@ fn main() {
     vweb.run<App>(port)
 }
 
-// initialization of webapp
-pub fn (mut app App) init_once() {
+// init_server initialization of webapp
+pub fn (mut app App) init_server() {
 	// app.handle_static('.') // serve static content from current folder
 	// app.handle_static('public') // serve static content from folder './public'
 	// note that template files now can be in the same folder, or under 'templates/' ...
 }
 
-// initialization just before any route call
-pub fn (mut app App) init() {
+// before_request initialization just before any route call
+pub fn (mut app App) before_request() {
 }
 
-// serve some content on the root (index) route '/'
+// index serve some content on the root (index) route '/'
 // note that this implementation doesn't requires a template page ...
 pub fn (mut app App) index() vweb.Result {
 	return app.json('{"Hello":"World"}')
