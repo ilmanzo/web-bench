@@ -11,19 +11,24 @@ const (
 )
 
 struct App {
-    vweb.Context // using embedded struct
+    vweb.Context
 }
 
 fn main() {
 	// println("Server listening on 'http://${server}:${port}' ...")
-    vweb.run<App>(port)
+	vweb.run(new_app(), port)
 }
 
-// init_server initialization of webapp
-pub fn (mut app App) init_server() {
-	// app.handle_static('.') // serve static content from current folder
-	// app.handle_static('public') // serve static content from folder './public'
+// new_app creates and returns a new app instance
+fn new_app() &App {
+	mut app := &App{}
+
+	// additional app instance startup only configuration
+	// app.handle_static('.', false) // serve static content from current folder
+	// app.handle_static('public', false) // serve static content from folder './public'
 	// note that template files now can be in the same folder, or under 'templates/' ...
+
+	return app
 }
 
 // before_request initialization just before any route call
