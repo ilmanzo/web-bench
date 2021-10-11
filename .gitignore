@@ -5,11 +5,11 @@
 !*.*
 !/BUILD
 !/CHANGELOG
-!/Dockerfile
 !/LICENSE
 !/Makefile
 !/NOTICE
 !/README
+!Dockerfile
 # then add all other (folder and files) exclusions ...
 
 # temporary/work/output folders
