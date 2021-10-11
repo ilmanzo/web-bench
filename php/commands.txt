@@ -1,0 +1,13 @@
+From a bash shell:
+```
+docker build -t hello-web .
+
+docker run -it --rm --name hello-web -p 80:80 hello-web
+```
+to run as a real server, use detached mode:
+```
+docker run -it --rm --name hello-web -p 80:80 -d hello-web
+```
+
+
+----
